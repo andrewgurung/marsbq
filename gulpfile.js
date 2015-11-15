@@ -7,6 +7,7 @@ var imageMin = require('gulp-imagemin');
 var handlebars = require('gulp-compile-handlebars');
 var rename = require('gulp-rename');
 var less = require('gulp-less');
+var autoprefixer = require('gulp-autoprefixer');
 
 var menu = require('./menu.json');
 
@@ -19,7 +20,7 @@ gulp.task('templates', function(){
   var options = {
     batch: ['src/templates/partials']
   };
-  
+
   return gulp.src(['src/templates/**/*.hbs', '!src/templates/partials/**/*.hbs'])
     .pipe(handlebars(data, options))
     .pipe(rename(function(path){
@@ -48,6 +49,7 @@ gulp.task('styles', function(){
   gulp.src(['src/styles/main.less'])
     .pipe(sourcemaps.init())
     .pipe(less())
+    .pipe(autoprefixer())
     .pipe(minifyCss())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/styles'))
