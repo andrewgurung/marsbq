@@ -15,9 +15,11 @@ gulp.task('templates', function(){
     year: new Date().getFullYear(),
     menu: menu.menuItems
   };
+
   var options = {
     batch: ['src/templates/partials']
   };
+  
   return gulp.src(['src/templates/**/*.hbs', '!src/templates/partials/**/*.hbs'])
     .pipe(handlebars(data, options))
     .pipe(rename(function(path){
