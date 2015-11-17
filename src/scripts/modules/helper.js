@@ -1,5 +1,5 @@
 var countdown = require('countdown');
-var model = require('./model.js')
+var model = require('./model.js');
 
 var helper = module.exports = {
 
