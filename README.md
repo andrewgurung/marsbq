@@ -1,4 +1,4 @@
-# marsbq: BBQ on Mars
+# marsbq: BBQ on Mars.
 A modern Front-End Development project that includes:
 - Yeoman (Scaffolding)
 - Gulp (Build Tool)
